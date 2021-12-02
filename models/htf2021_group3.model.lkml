@@ -57,6 +57,11 @@ explore: people {
     sql_on:${people.id} = ${physical_characteristics.id};;
     relationship: many_to_one
   }
+  join: ride_passengers {
+    type: left_outer
+    sql_on:${people.id}=${ride_passengers.passenger_id};;
+    relationship: many_to_one
+  }
 }
 
 
