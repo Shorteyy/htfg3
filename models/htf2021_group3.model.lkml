@@ -52,7 +52,13 @@ explore: people {
     sql_on:${people.id}=${ages.id};;
     relationship: many_to_one
   }
+  join:physical_characteristics{
+    type: left_outer
+    sql_on:${people.id} = ${physical_characteristics.id};;
+    relationship: many_to_one
+  }
 }
+
 
 explore: roles {}
 
